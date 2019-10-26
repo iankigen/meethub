@@ -42,7 +42,7 @@ MEDIA_ROOT = ('media')
 MEDIA_URL = '/media/'
 
 
-ALLOWED_HOSTS = ['127.0.0.1', 'themeethub.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 
@@ -187,9 +187,9 @@ TINYMCE_DEFAULT_CONFIG = {
 
 
 cloudinary.config(
-    cloud_name = env.str('CLOUD_NAME'),
-    api_key = env.str('API_KEY'),
-    api_secret = env.str('API_SECRET')
+    cloud_name=env.str('CLOUD_NAME'),
+    api_key=env.str('API_KEY'),
+    api_secret=env.str('API_SECRET')
 
 )
 
