@@ -70,8 +70,8 @@ INSTALLED_APPS = [
     'accounts',
     'userprofile',
     'actions',
-    'apiv1',
     'comments',
+    'portfolio',
 
 
 ]

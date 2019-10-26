@@ -32,9 +32,6 @@ urlpatterns = [
 	path('profile/', include('userprofile.urls'), name='userprofile'),
 	path('notifications/', include('actions.urls')),
 	path('comments/', include('comments.urls')),
-
-	# path('api/v1/', include('apiv1.urls')),
-
 ]
 
 if settings.DEBUG:
