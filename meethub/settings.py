@@ -34,6 +34,8 @@ DATABASES = {
     'default': env.db()
 }
 
+ALLOWED_HOSTS = ['127.0.0.1', env('ALLOWED_HOSTS')]
+
 
 public_root = root.path()
 
