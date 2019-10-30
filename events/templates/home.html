@@ -1,0 +1,559 @@
+{% extends 'events/base.html' %}
+{% load static %}
+{% block navbar %}
+    <!--==========================
+    Header
+    ============================-->
+    <header id="header">
+        <div class="container-fluid">
+
+            <div id="logo" class="pull-left">
+                <h1><a href="#intro" class="scrollto">Gold Touch Events</a></h1>
+            </div>
+
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="menu-active"><a href="#intro">Home</a></li>
+                    <li><a href="/#events">Upcoming Events</a></li>
+                    <li><a href="/#about">About Us</a></li>
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/#portfolio">Portfolio</a></li>
+                    <li><a href="/#team">Team</a></li>
+                    <li><a href="/#contact">Contact</a></li>
+                    <li class="menu-has-children"><a href="">Hi, Guest</a>
+                        <ul>
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Sign Up</a></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav><!-- #nav-menu-container -->
+        </div>
+    </header><!-- #header -->
+{% endblock %}
+{% block content %}
+
+    <!--==========================
+      Intro Section
+    ============================-->
+    <section id="intro">
+        <div class="intro-container">
+            <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel">
+
+                <ol class="carousel-indicators"></ol>
+
+                <div class="carousel-inner" role="listbox">
+
+                    <div class="carousel-item active">
+                        <div class="carousel-background"><img style="width:100%;" src="{% static 'img/events02.jpeg' %}"
+                                                              alt="">
+                        </div>
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <h2>We are professional</h2>
+                                <p>We are responsible, accountable, respectful, effective,efficient and client steward.
+                                    We promote honesty, integrity and openness in all we do. <br>
+                                    We encourage innovation to meet challenges.</p>
+                                <a href="/events" class="btn-get-started scrollto">View Upcoming Events</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-background"><img style="width:100%;" src="{% static 'img/events01.jpeg' %}"
+                                                              alt="">
+                        </div>
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <p>We are responsible, accountable, respectful, effective,efficient and client steward.
+                                    We promote honesty, integrity and openness in all we do. <br>
+                                    We encourage innovation to meet challenges.</p>
+                                <a href="/events" class="btn-get-started scrollto">View Upcoming Events</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-background"><img style="width:100%;" src="{% static 'img/events03.jpeg' %}"
+                                                              alt="">
+                        </div>
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <p>We are responsible, accountable, respectful, effective,efficient and client steward.
+                                    We promote honesty, integrity and openness in all we do. <br>
+                                    We encourage innovation to meet challenges.</p>
+                                <a href="/events" class="btn-get-started scrollto">View Upcoming Events</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-background"><img style="width:100%;" src="{% static 'img/events04.jpeg' %}"
+                                                              alt="">
+                        </div>
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <p>We are responsible, accountable, respectful, effective,efficient and client steward.
+                                    We promote honesty, integrity and openness in all we do. <br>
+                                    We encourage innovation to meet challenges.</p>
+                                <a href="/events" class="btn-get-started scrollto">View Upcoming Events</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-background"><img style="width:100%;" src="{% static 'img/events08.jpeg' %}"
+                                                              alt="">
+                        </div>
+                        <div class="carousel-container">
+                            <div class="carousel-content">
+                                <p>We are responsible, accountable, respectful, effective,efficient and client stewards.
+                                    We promote honesty, integrity and openness in all we do. <br>
+                                    We encourage innovation to meet challenges.</p>
+                                <a href="/events" class="btn-get-started scrollto">View Upcoming Events</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <a class="carousel-control-prev" href="#introCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon ion-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+
+                <a class="carousel-control-next" href="#introCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon ion-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+
+            </div>
+        </div>
+    </section><!-- #intro -->
+
+    <main id="main">
+
+        <!--==========================
+          About Us Section
+        ============================-->
+        <section id="about">
+            <div class="container">
+
+                <header class="section-header">
+                    <h3>About Us</h3>
+                    <p>We are responsible, accountable, respectful, effective,efficient and client stewards.
+                        We promote honesty, integrity and openness in all we do.
+                        We encourage innovation to meet challenges.</p>
+                </header>
+
+                <div class="row about-cols">
+
+                    <div class="col-md-4 wow fadeInUp">
+                        <div class="about-col">
+                            <div class="img">
+                                <img src="{% static 'img/about-mission.jpg' %}" alt="" class="img-fluid">
+                                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+                            </div>
+                            <h2 class="title"><a href="#">Our Mission</a></h2>
+                            <p>
+                                Provide our clients with a cost workforce with top quality services.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="about-col">
+                            <div class="img">
+                                <img src="{% static 'img/about-plan.jpg' %}" alt="" class="img-fluid">
+                                <div class="icon"><i class="ion-ios-list-outline"></i></div>
+                            </div>
+                            <h2 class="title"><a href="#">Our Plan</a></h2>
+                            <p>
+                                Provide our clients with a cost workforce with top quality services.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="about-col">
+                            <div class="img">
+                                <img src="{% static 'img/about-vision.jpg' %}" alt="" class="img-fluid">
+                                <div class="icon"><i class="ion-ios-eye-outline"></i></div>
+                            </div>
+                            <h2 class="title"><a href="#">Our Vision</a></h2>
+                            <p>
+                                We have a clear golden vision to ensure clients satisfaction and loyalty.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- #about -->
+
+        <!--==========================
+          Services Section
+        ============================-->
+        <section id="services">
+            <div class="container">
+
+                <header class="section-header wow fadeInUp">
+                    <h3>Services</h3>
+                </header>
+
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+                        <div class="icon"><i class="ion-ios-people-outline"></i></div>
+                        <h4 class="title"><a href="">Wedding</a></h4>
+                        <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero
+                            tempore, cum soluta nobis est eligendi</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+                        <div class="icon"><i class="ion-ios-bookmarks-outline"></i></div>
+                        <h4 class="title"><a href="">Corporate Events</a></h4>
+                        <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                            ex ea commodo consequat tarad limino ata</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s">
+                        <div class="icon"><i class="ion-ios-paper-outline"></i></div>
+                        <h4 class="title"><a href="">Show Up Events</a></h4>
+                        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                            dolore eu fugiat nulla pariatur</p>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </section><!-- #services -->
+
+
+        <!--==========================
+          Facts Section
+        ============================-->
+        <section id="facts" class="wow fadeIn">
+            <div class="container">
+
+                <header class="section-header">
+                    <h3>Facts</h3>
+                </header>
+
+                <div class="row counters">
+
+                    <div class="col-lg-4 col-6 text-center">
+                        <span data-toggle="counter-up">100+</span>
+                        <p>Satisfied Clients</p>
+                    </div>
+
+
+                    <div class="col-lg-4 col-6 text-center">
+                        <span data-toggle="counter-up">1,500+</span>
+                        <p>Hours Of Support</p>
+                    </div>
+
+                    <div class="col-lg-4 col-6 text-center">
+                        <span data-toggle="counter-up">15</span>
+                        <p>Hard Workers</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- #facts -->
+
+        <!--==========================
+          Portfolio Section
+        ============================-->
+        <section id="portfolio" class="section-bg">
+            <div class="container">
+
+                <header class="section-header">
+                    <h3 class="section-title">Our Portfolio</h3>
+                </header>
+
+                <div class="row portfolio-container">
+
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="portfolio-wrap">
+                            <figure>
+                                <img src="{% static 'img/events04.jpeg' %}" class="img-fluid" alt="">
+                                <a href="{% static 'img/events04.jpeg' %}" class="link-preview"
+                                   data-lightbox="portfolio" data-title="App 3" title="Preview"><i
+                                        class="ion ion-eye"></i></a>
+                                <a href="#" class="link-details" title="More Details"><i
+                                        class="ion ion-android-open"></i></a>
+                            </figure>
+
+                            <div class="portfolio-info">
+                                <p>Corporate Event</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="portfolio-wrap">
+                            <figure>
+                                <img src="{% static 'img/events05.jpeg' %}" class="img-fluid" alt="">
+                                <a href="{% static 'img/events05.jpeg' %}" class="link-preview"
+                                   data-lightbox="portfolio" data-title="Web 1" title="Preview"><i
+                                        class="ion ion-eye"></i></a>
+                                <a href="#" class="link-details" title="More Details"><i
+                                        class="ion ion-android-open"></i></a>
+                            </figure>
+
+                            <div class="portfolio-info">
+                                <p>Wedding</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="portfolio-wrap">
+                            <figure>
+                                <img src="{% static 'img/events01.jpeg' %}" class="img-fluid" alt="">
+                                <a href="{% static 'img/events01.jpeg' %}" class="link-preview"
+                                   data-lightbox="portfolio" data-title="Web 1" title="Preview"><i
+                                        class="ion ion-eye"></i></a>
+                                <a href="#" class="link-details" title="More Details"><i
+                                        class="ion ion-android-open"></i></a>
+                            </figure>
+
+                            <div class="portfolio-info">
+                                <p>Show Up Event</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- #portfolio -->
+
+        <!--==========================
+          Team Section
+        ============================-->
+        <section id="team">
+            <div class="container">
+                <div class="section-header wow fadeInUp">
+                    <h3>Team</h3>
+                    <p>Dedicated Team Members.</p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="member">
+                            <img src="{% static 'img/events-profile-1.jpeg' %}" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Dennis Santana</h4>
+                                    <span>MC</span>
+                                    <div class="social">
+                                        <a href=""><i class="fa fa-twitter"></i></a>
+                                        <a href=""><i class="fa fa-facebook"></i></a>
+                                        <a href=""><i class="fa fa-google-plus"></i></a>
+                                        <a href=""><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="member">
+                            <img src="{% static 'img/events-profile-1.jpeg' %}" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Dennis Santana</h4>
+                                    <span>MC</span>
+                                    <div class="social">
+                                        <a href=""><i class="fa fa-twitter"></i></a>
+                                        <a href=""><i class="fa fa-facebook"></i></a>
+                                        <a href=""><i class="fa fa-google-plus"></i></a>
+                                        <a href=""><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="member">
+                            <img src="{% static 'img/events-profile-1.jpeg' %}" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Dennis Santana</h4>
+                                    <span>MC</span>
+                                    <div class="social">
+                                        <a href=""><i class="fa fa-twitter"></i></a>
+                                        <a href=""><i class="fa fa-facebook"></i></a>
+                                        <a href=""><i class="fa fa-google-plus"></i></a>
+                                        <a href=""><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="member">
+                            <img src="{% static 'img/events-profile-1.jpeg' %}" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Dennis Santana</h4>
+                                    <span>MC</span>
+                                    <div class="social">
+                                        <a href=""><i class="fa fa-twitter"></i></a>
+                                        <a href=""><i class="fa fa-facebook"></i></a>
+                                        <a href=""><i class="fa fa-google-plus"></i></a>
+                                        <a href=""><i class="fa fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- #team -->
+        <section id="events" style="padding: 60px 0;" class="section-bg wow">
+
+
+            <div class="container">
+
+                <div class="section-header">
+                    <h3>Upcoming Events</h3>
+                </div>
+
+                <div class="row contact-info">
+                    {% for event in events %}
+                        <p class="mx-auto w-75"><strong>{{ event.date }}</strong></p>
+                        <div class="card w-75 mx-auto border-info">
+                            <div class="card-body">
+                                <div>
+                                    <p class="card-text"><strong>{{ event.venue|upper }}</strong> -
+                                        <small class="text-muted">{{ event.time }}</small>
+                                    </p>
+                                    <h2><a class="card-text text-info"
+                                           href="{% url 'events:event-detail' event.id %}">{{ event.name }}</a></h2>
+                                    <p>{{ event.details|safe|truncatewords_html:25 }}</p>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </section> <!-- #events -->
+
+        <!--==========================
+          Contact Section
+        ============================-->
+        <section id="contact" style="background: #fff;" class="section-bg wow fadeInUp">
+            <div class="container">
+
+                <div class="section-header">
+                    <h3>Contact Us</h3>
+                </div>
+
+                <div class="row contact-info">
+
+                    <div class="col-md-4">
+                        <div class="contact-address">
+                            <i class="ion-ios-location-outline"></i>
+                            <h3>Address</h3>
+                            <address>Nandi Street, Eldoret, Kenya</address>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="contact-phone">
+                            <i class="ion-ios-telephone-outline"></i>
+                            <h3>Phone Number</h3>
+                            <p><a href="tel:+254727999306">+254 727 999306</a></p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="contact-email">
+                            <i class="ion-ios-email-outline"></i>
+                            <h3>Email</h3>
+                            <p><a href="mailto:goldtoucheventske@gmail.com">goldtoucheventske@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- #contact -->
+
+    </main>
+
+    <!--==========================
+      Footer
+    ============================-->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <h3>Golden Touch Events</h3>
+                        <p>We are responsible, accountable, respectful, effective,efficient and client stewards.
+                            We promote honesty, integrity and openness in all we do.
+                            We encourage innovation to meet challenges.</p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="ion-ios-arrow-right"></i> <a href="#">Home</a></li>
+                            <li><i class="ion-ios-arrow-right"></i> <a href="#">About us</a></li>
+                            <li><i class="ion-ios-arrow-right"></i> <a href="#">Services</a></li>
+                            <li><i class="ion-ios-arrow-right"></i> <a href="#">Terms of service</a></li>
+                            <li><i class="ion-ios-arrow-right"></i> <a href="#">Privacy policy</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>Contact Us</h4>
+                        <p>
+                            Nandi Street <br>
+                            Eldoret,<br>
+                            Kenya <br>
+                            <strong>Phone:</strong> +254 727 999306<br>
+                            <strong>Email:</strong> goldtoucheventske@gmail.com<br>
+                        </p>
+
+                        <div class="social-links">
+                            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+                            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong>Golden Touch Events</strong>. All Rights Reserved
+            </div>
+        </div>
+    </footer><!-- #footer -->
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- Uncomment below i you want to use a preloader -->
+    <!-- <div id="preloader"></div> -->
+{% endblock %}

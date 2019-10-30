@@ -1,12 +1,8 @@
 from django.views import generic
 from django.urls import reverse_lazy
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import get_object_or_404, redirect
-from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin, AccessMixin
 from django.contrib.messages.views import SuccessMessageMixin
-from django.contrib.auth.models import User
 from django.views import View
-from django.contrib.auth.decorators import login_required
 
 from actions.utils import create_action
 from comments.models import Comment
@@ -18,17 +14,14 @@ from .models import Event
 # Create your views here.
 
 
-class EventList(LoginRequiredMixin, generic.ListView):
+class EventList(generic.ListView):
     model = Event
     template_name = 'events/list_of_events.html'
     context_object_name = 'events'
     paginate_by = 10
 
     def get_queryset(self):
-        if self.request.user.is_superuser:
-            return Event.objects.all()
-        else:
-            return Event.objects.all()
+        return Event.objects.all()
 
 
 class EventDisplay(generic.DetailView):
@@ -40,7 +33,6 @@ class EventDisplay(generic.DetailView):
         context = super().get_context_data(**kwargs)
         context['form'] = CommentForm()
         context['comments'] = self.get_object().comments.all()
-        context['attending'] = self.get_object().attendees.all
         return context
 
 
@@ -62,13 +54,15 @@ class CommentCreate(SuccessMessageMixin, generic.CreateView):
         return reverse_lazy('events:event-detail', kwargs={'pk': self.get_object(Event.objects.all()).pk})
 
 
-class EventDetail(LoginRequiredMixin, View):
+class EventDetail(AccessMixin, View):
 
     def get(self, request, *args, **kwargs):
         view = EventDisplay.as_view()
         return view(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            return self.handle_no_permission()
         view = CommentCreate.as_view()
         return view(request, *args, **kwargs)
 
@@ -103,23 +97,4 @@ class EventDelete(LoginRequiredMixin, SuccessMessageMixin, generic.DeleteView):
     context_object_name = 'event'
     success_message = "%(name)s was deleted successfully"
 
-
-@login_required()
-def attend_event(request, event_id):
-    event = get_object_or_404(Event, pk=event_id)
-    attendee = User.objects.get(username=request.user)
-    event.attendees.add(attendee)
-    create_action(attendee, 'is attending', event)
-    messages.success(request, 'You are now attending {0}'.format(event.name))
-    return redirect('events:event-detail', pk=event.pk)
-
-
-@login_required()
-def not_attend_event(request, event_id):
-    event = get_object_or_404(Event, pk=event_id)
-    attendee = User.objects.get(username=request.user)
-    event.attendees.remove(attendee)
-    create_action(attendee, 'no longer attending', event)
-    messages.success(request, 'You are no longer attending {0}'.format(event.name))
-    return redirect('events:event-detail', pk=event.pk)
 
