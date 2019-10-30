@@ -21,22 +21,21 @@ from django.conf.urls.static import static
 from filebrowser.sites import site
 
 # from . import settings
-
+from portfolio.views import HomeView
 
 urlpatterns = [
-    path('iyanuashiri/', admin.site.urls),
-    path('iyanuashiri/filebrowser/', site.urls),
-    path('', include('events.urls'), name='events'),
-    path('accounts/', include('accounts.urls')),
-    path('tinymce/', include('tinymce.urls')),
-    path('userprofile/', include('userprofile.urls'), name='userprofile'),
-    path('notifications/', include('actions.urls')),
-    path('comments/', include('comments.urls')),
-
-    path('api/v1/', include('apiv1.urls')),
+	path('', include('events.urls'), name='events'),
+	path('admin/', admin.site.urls),
+	path('filebrowser/', site.urls),
+	path('accounts/', include('accounts.urls')),
+	path('tinymce/', include('tinymce.urls')),
+	path('profile/', include('userprofile.urls'), name='userprofile'),
+	path('notifications/', include('actions.urls')),
+	path('comments/', include('comments.urls')),
+	path('', HomeView.as_view(), name='home'),
 
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+	urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+	urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

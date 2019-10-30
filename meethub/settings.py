@@ -22,6 +22,8 @@ environ.Env.read_env()
 
 SITE_ROOT = root()
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 DEBUG = env('DEBUG')
 TEMPLATE_DEBUG = DEBUG
 
@@ -42,7 +44,7 @@ MEDIA_ROOT = ('media')
 MEDIA_URL = '/media/'
 
 
-ALLOWED_HOSTS = ['127.0.0.1', 'themeethub.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 
@@ -70,8 +72,8 @@ INSTALLED_APPS = [
     'accounts',
     'userprofile',
     'actions',
-    'apiv1',
     'comments',
+    'portfolio',
 
 
 ]
@@ -187,9 +189,9 @@ TINYMCE_DEFAULT_CONFIG = {
 
 
 cloudinary.config(
-    cloud_name = env.str('CLOUD_NAME'),
-    api_key = env.str('API_KEY'),
-    api_secret = env.str('API_SECRET')
+    cloud_name=env.str('CLOUD_NAME'),
+    api_key=env.str('API_KEY'),
+    api_secret=env.str('API_SECRET')
 
 )
 
@@ -198,4 +200,8 @@ TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = [
     '--with-coverage',
     '--cover-package=userprofile, actions, events, accounts, comments'
+]
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "portfolio/static/"),
 ]
