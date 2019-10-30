@@ -37,12 +37,8 @@ public_root = root.path()
 
 PROJECT_ROOT = os.path.join(os.path.abspath(__file__))
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-
-STATICFILES_DIRS = (
-	os.path.join(BASE_DIR, 'static'),
-)
 
 MEDIA_ROOT = ('media')
 MEDIA_URL = '/media/'
