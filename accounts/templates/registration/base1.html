@@ -1,21 +1,105 @@
+{% load static %}
 <!DOCTYPE html>
 {% load staticfiles %}
+{% load events_tags %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_filters %}
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <title>Golden Touch Events</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700"
+          rel="stylesheet">
 
+    <!-- Bootstrap CSS File -->
+    <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
 
-    <title>MeetHub</title>
+    <!-- Libraries CSS Files -->
+    <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
 </head>
 <body>
-    <div>
-        <h1 class="w-50 mx-auto text-capitalize text-info">Welcome To MeetHub</h1>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <a class="navbar-brand" href="/">Gold Touch Events</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'events:event-list' %}">Upcoming Events</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'events:event-create' %}">Create a new Event</a>
+            </li>
+            <li><a class="nav-link" href="/#about">About Us</a></li>
+            <li><a class="nav-link" href="/#services">Services</a></li>
+            <li><a class="nav-link" href="/#portfolio">Portfolio</a></li>
+            <li><a class="nav-link" href="/#team">Team</a></li>
+            <li><a class="nav-link" href="/#contact">Contact</a></li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Hi, {{ user.first_name }}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Login</a>
+                    <a class="dropdown-item" href="#">Sign Up</a>
+                    <a class="dropdown-item" href="{% url 'userprofile:detail' user.id %}">My Profile</a>
+                    <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                </div>
+            </li>
+        </ul>
     </div>
-    {% block content %}
+</nav>
 
-    {% endblock %}
+{% block content %}
+{% endblock %}
 
+<!-- JavaScript Libraries -->
+<script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'lib/jquery/jquery-migrate.min.js' %}"></script>
+<script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'lib/easing/easing.min.js' %}"></script>
+<script src="{% static 'lib/superfish/hoverIntent.js' %}"></script>
+<script src="{% static 'lib/superfish/superfish.min.js' %}"></script>
+<script src="{% static 'lib/wow/wow.min.js' %}"></script>
+<script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+<script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+<script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+<script src="{% static 'lib/touchSwipe/jquery.touchSwipe.min.js' %}"></script>
+<!-- Contact Form JavaScript File -->
+<script src="{% static 'contactform/contactform.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+
+
+<!-- Template Main Javascript File -->
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
 </body>
 </html>

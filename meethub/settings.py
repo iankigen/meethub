@@ -22,6 +22,8 @@ environ.Env.read_env()
 
 SITE_ROOT = root()
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 DEBUG = env('DEBUG')
 TEMPLATE_DEBUG = DEBUG
 
@@ -198,4 +200,8 @@ TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = [
     '--with-coverage',
     '--cover-package=userprofile, actions, events, accounts, comments'
+]
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "portfolio/static/"),
 ]
