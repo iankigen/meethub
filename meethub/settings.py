@@ -43,9 +43,9 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = ('media')
 MEDIA_URL = '/media/'
 
-
-ALLOWED_HOSTS = ['127.0.0.1']
-
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 
 # Application definition
@@ -200,8 +200,4 @@ TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
 NOSE_ARGS = [
     '--with-coverage',
     '--cover-package=userprofile, actions, events, accounts, comments'
-]
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "portfolio/static/"),
 ]
