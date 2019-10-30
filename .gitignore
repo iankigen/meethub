@@ -104,7 +104,6 @@ venv.bak/
 
 .idea
 bin/
-lib/
 lib64
 pip-selfcheck.json
 share/
